@@ -4,7 +4,7 @@ import Navbar from '../../Compnents/Navbar/Navbar'
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      homepage
     </div>
   )
 }

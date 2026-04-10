@@ -1,14 +1,8 @@
-import { useState } from "react";
 import { NavLink } from "react-router";
 
 export default function Navbar() {
-  const [isActive, setIsActive] = useState(false);
+  
 
-  const handleActive = () => {
-    if (isActive === false) {
-      setIsActive(true);
-    }
-  };
 
   return (
     <div className="w-full py-3 bg-base-100 shadow-sm">
@@ -43,10 +37,10 @@ export default function Navbar() {
           <ul className="menu menu-horizontal px-1 flex gap-14">
             <li>
               <NavLink
-                onClick={() => handleActive()}
-                className={`text-[20px] ${
-                  isActive === true ? "border border-green-400" : ""
-                }`}
+                
+               className={({ isActive }) =>
+                isActive ? "border-2 border-green-400" : ""
+              }
                 to="/"
               >
                 Home
@@ -54,9 +48,10 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink
-                onClick={() => handleActive()}
-                className={`text-[20px] 
-                ${isActive === true ? "border border-green-400" : ""}`}
+               
+               className={({ isActive }) =>
+                isActive ? "border-2 border-green-400" : ""
+              }
                 to="/books"
               >
                 Books
@@ -64,10 +59,10 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink
-                onClick={() => handleActive()}
-                className={`text-[20px] ${
-                  isActive === true ? "border border-green-400" : ""
-                }`}
+                
+                className={({ isActive }) =>
+                isActive ? "border-2 border-green-400" : ""
+              }
                 to="/about"
               >
                 About
