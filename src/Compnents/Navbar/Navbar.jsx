@@ -1,9 +1,6 @@
 import { NavLink } from "react-router";
 
 export default function Navbar() {
-  
-
-
   return (
     <div className="w-full py-3 bg-base-100 shadow-sm">
       <div className="navbar container mx-auto">
@@ -19,10 +16,10 @@ export default function Navbar() {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/books">Books</NavLink>
+                <NavLink to="/books">Listed Books</NavLink>
               </li>
               <li>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="/Pages to Read">Pages to Read</NavLink>
               </li>
             </ul>
           </div>
@@ -37,10 +34,17 @@ export default function Navbar() {
           <ul className="menu menu-horizontal px-1 flex gap-14">
             <li>
               <NavLink
-                
-               className={({ isActive }) =>
-                isActive ? "border-2 border-green-400" : ""
-              }
+                className={({ isActive }) =>
+  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
+   text-base-content hover:text-green-500
+   after:content-[''] after:absolute after:left-0 after:-bottom-1
+   after:h-0.5 after:bg-green-500 after:transition-all after:duration-300
+
+   ${isActive 
+     ? "after:w-full text-green-500 font-semibold" 
+     : "after:w-0 hover:after:w-full text-green-500"
+   }`
+}
                 to="/"
               >
                 Home
@@ -48,24 +52,38 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink
-               
-               className={({ isActive }) =>
-                isActive ? "border-2 border-green-400" : ""
-              }
+                className={({ isActive }) =>
+  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
+   text-base-content hover:text-green-500
+   after:content-[''] after:absolute after:left-0 after:-bottom-1
+   after:h-0.5 after:bg-green-500 after:transition-all after:duration-300
+
+   ${isActive 
+     ? "after:w-full text-green-500 font-semibold" 
+     : "after:w-0 hover:after:w-full"
+   }`
+}
                 to="/books"
               >
-                Books
+                Listed Books
               </NavLink>
             </li>
             <li>
               <NavLink
-                
                 className={({ isActive }) =>
-                isActive ? "border-2 border-green-400" : ""
-              }
-                to="/about"
+  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
+   text-base-content hover:text-green-500
+   after:content-[''] after:absolute after:left-0 after:-bottom-1
+   after:h-0.5 after:bg-green-500 after:transition-all after:duration-300
+
+   ${isActive 
+     ? "after:w-full text-green-500 font-semibold" 
+     : "after:w-0 hover:after:w-full"
+   }`
+}   
+                to="/Pages to Read"
               >
-                About
+                Pages to Read
               </NavLink>
             </li>
           </ul>
@@ -73,8 +91,8 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="navbar-end flex gap-4">
-          <button className="btn btn-outline btn-primary">Login</button>
-          <button className="btn btn-outline btn-accent">Sign Up</button>
+          <button className="btn btn-outline btn-primary text-xl">Login</button>
+          <button className="btn btn-outline btn-accent text-xl">Sign Up</button>
         </div>
       </div>
     </div>
