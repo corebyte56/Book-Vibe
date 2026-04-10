@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from '../../Compnents/Navbar/Navbar'
+import Banner from '../../Compnents/Banner/Banner'
 
 const HomePage = () => {
   return (
-    <div>
-      homepage
+    <div className='container mx-auto my-27'>
+      <Banner />
     </div>
   )
 }

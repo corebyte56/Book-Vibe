@@ -42,7 +42,7 @@ export default function Navbar() {
 
    ${isActive 
      ? "after:w-full text-green-500 font-semibold" 
-     : "after:w-0 hover:after:w-full text-green-500"
+     : "after:w-0 hover:after:w-full"
    }`
 }
                 to="/"
