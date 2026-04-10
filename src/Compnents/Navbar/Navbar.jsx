@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 export default function Navbar() {
   return (
-    <div className="w-full py-3 bg-base-100 shadow-sm">
+    <div className="w-full py-3 bg-base-100 shadow-sm sticky top-0 z-50 backdrop-blur-lg">
       <div className="navbar container mx-auto">
         {/* Left */}
         <div className="navbar-start">
