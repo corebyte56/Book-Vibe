@@ -4,7 +4,7 @@ import Banner from '../../Compnents/Banner/Banner'
 
 const HomePage = () => {
   return (
-    <div className='container mx-auto my-27'>
+    <div className='container mx-auto my-10 md:my-27'>
       <Banner />
     </div>
   )

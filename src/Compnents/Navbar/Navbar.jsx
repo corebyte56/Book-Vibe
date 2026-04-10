@@ -24,7 +24,10 @@ export default function Navbar() {
             </ul>
           </div>
 
-          <NavLink to="/" className="btn btn-ghost text-2xl font-bold">
+          <NavLink
+            to="/"
+            className="btn btn-ghost tex-xl md:text-2xl font-bold"
+          >
             Book Vibe
           </NavLink>
         </div>
@@ -35,16 +38,17 @@ export default function Navbar() {
             <li>
               <NavLink
                 className={({ isActive }) =>
-  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
+                  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
    text-base-content hover:text-green-500
    after:content-[''] after:absolute after:left-0 after:-bottom-1
    after:h-0.5 after:bg-green-500 after:transition-all after:duration-300
 
-   ${isActive 
-     ? "after:w-full text-green-500 font-semibold" 
-     : "after:w-0 hover:after:w-full"
+   ${
+     isActive
+       ? "after:w-full text-green-500 font-semibold"
+       : "after:w-0 hover:after:w-full"
    }`
-}
+                }
                 to="/"
               >
                 Home
@@ -53,16 +57,17 @@ export default function Navbar() {
             <li>
               <NavLink
                 className={({ isActive }) =>
-  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
+                  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
    text-base-content hover:text-green-500
    after:content-[''] after:absolute after:left-0 after:-bottom-1
    after:h-0.5 after:bg-green-500 after:transition-all after:duration-300
 
-   ${isActive 
-     ? "after:w-full text-green-500 font-semibold" 
-     : "after:w-0 hover:after:w-full"
+   ${
+     isActive
+       ? "after:w-full text-green-500 font-semibold"
+       : "after:w-0 hover:after:w-full"
    }`
-}
+                }
                 to="/books"
               >
                 Listed Books
@@ -71,16 +76,17 @@ export default function Navbar() {
             <li>
               <NavLink
                 className={({ isActive }) =>
-  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
+                  `relative text-[18px] px-3 py-2 rounded-md transition-all duration-300
    text-base-content hover:text-green-500
    after:content-[''] after:absolute after:left-0 after:-bottom-1
    after:h-0.5 after:bg-green-500 after:transition-all after:duration-300
 
-   ${isActive 
-     ? "after:w-full text-green-500 font-semibold" 
-     : "after:w-0 hover:after:w-full"
+   ${
+     isActive
+       ? "after:w-full text-green-500 font-semibold"
+       : "after:w-0 hover:after:w-full"
    }`
-}   
+                }
                 to="/Pages to Read"
               >
                 Pages to Read
@@ -91,8 +97,10 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="navbar-end flex gap-4">
-          <button className="btn btn-outline btn-primary text-xl">Login</button>
-          <button className="btn btn-outline btn-accent text-xl">Sign Up</button>
+          <button className="btn btn-outline btn-primary md:text-xl">Login</button>
+          <button className="btn btn-outline btn-accent md:text-xl">
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
