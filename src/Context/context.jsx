@@ -9,7 +9,10 @@ const ContextProvider = ({ children }) => {
   const [addToRead, setAddToRead] = useState([]);
   const [addToWishList, setAddToWishList] = useState([]);
 
+
+//   ReadList
   const handleAddToRead = (findBook) => {
+    // Readlist List logic
     const isExist = addToRead.find((book) => book.bookId == findBook.bookId);
 
     if (isExist) {
@@ -23,7 +26,19 @@ const ContextProvider = ({ children }) => {
     
   };
 
+
+//   Wish List
   const handleAddToWishList = (findBook) => {
+
+    // isExistInReadList check
+    const isExistInReadList = addToRead.find((book) => book.bookId == findBook.bookId);
+
+    if(isExistInReadList){
+        toast.error(`${findBook.bookName} Already in ReadList`)
+        return;
+    }
+
+    // Wish List logic
     const isExist = addToWishList.find((book) => book.bookId == findBook.bookId);
 
     if (isExist) {
