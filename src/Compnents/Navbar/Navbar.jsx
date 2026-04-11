@@ -11,15 +11,15 @@ export default function Navbar() {
               ☰
             </div>
 
-            <ul className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul className="menu menu-sm dropdown-content space-y-3 mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-52">
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink className={`text-xl`} to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/books">Listed Books</NavLink>
+                <NavLink className={`text-xl`} to="/books">Listed Books</NavLink>
               </li>
               <li>
-                <NavLink to="/Pages to Read">Pages to Read</NavLink>
+                <NavLink className={`text-xl`} to="/Pages to Read">Pages to Read</NavLink>
               </li>
             </ul>
           </div>
