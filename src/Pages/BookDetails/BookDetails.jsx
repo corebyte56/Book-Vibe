@@ -6,10 +6,10 @@ const BookDetails = () => {
     const {bookId} = useParams()
     
     const books = useLoaderData()
-    const sdookContext = useContext(bookContext)
+    const {handleAddtoRead} = useContext(bookContext)
     const findBook = books.find(book => book.bookId == bookId)
 
-    console.log(sdookContext);
+    
     
    // console.log(bookId, books, findBook);
     const {
@@ -97,6 +97,7 @@ const BookDetails = () => {
       {/* Buttons */}
       <div className="flex flex-wrap gap-4 pt-2">
   <motion.button
+  onClick={() => handleAddtoRead(findBook)}
     whileHover={{
       y: -4,
       scale: 1.04,
