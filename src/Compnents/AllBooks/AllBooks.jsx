@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BooksCard from "../../Ui/BooksCard/BooksCard";
+import { bookContext } from "../../Context/context";
 
 const AllBooks = () => {
-  const [showBookData, setShowBookData] = useState([]);
-
-  // Fetch data from bookData.json
-  const handleData = async () => {
-    try {
-      const response = await fetch("/booksData.json");
-      const data = await response.json();
-      setShowBookData(data);
-      // console.log(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    handleData();
-  }, []);
+  const { showBookData } = useContext(bookContext);
 
   return (
     <div className="md:py-20 py-10 md:px-30">

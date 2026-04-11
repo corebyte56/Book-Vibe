@@ -1,45 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import { toast } from "react-toastify";
 
 export const bookContext = createContext();
 
 const ContextProvider = ({ children }) => {
-
   const [addToRead, setAddToRead] = useState([]);
   const [addToWishList, setAddToWishList] = useState([]);
+  const [showBookData, setShowBookData] = useState([]);
 
+  // Fetch data from bookData.json
+  // Showing Book Data In All AllBooks.jsx
+  const handleData = async () => {
+    try {
+      const response = await fetch("/booksData.json");
+      const data = await response.json();
+      setShowBookData(data);
+      // console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-//   ReadList
+  useEffect(() => {
+    handleData();
+  }, []);
+  // ----------------------------------
+
+  //   ReadList
   const handleAddToRead = (findBook) => {
     // Readlist List logic
     const isExist = addToRead.find((book) => book.bookId == findBook.bookId);
 
     if (isExist) {
       toast.error(`${findBook.bookName} Already Exist In Read List!`);
-      
     } else {
       setAddToRead([...addToRead, findBook]);
       toast.success(`${findBook.bookName} added In Read List!`);
-      
     }
-    
   };
 
-
-//   Wish List
+  //   Wish List
   const handleAddToWishList = (findBook) => {
-
     // isExistInReadList check
-    const isExistInReadList = addToRead.find((book) => book.bookId == findBook.bookId);
+    const isExistInReadList = addToRead.find(
+      (book) => book.bookId == findBook.bookId,
+    );
 
-    if(isExistInReadList){
-        toast.error(`${findBook.bookName} Already in ReadList`)
-        return;
+    if (isExistInReadList) {
+      toast.error(`${findBook.bookName} Already in ReadList`);
+      return;
     }
 
     // Wish List logic
-    const isExist = addToWishList.find((book) => book.bookId == findBook.bookId);
+    const isExist = addToWishList.find(
+      (book) => book.bookId == findBook.bookId,
+    );
 
     if (isExist) {
       toast.error(`${findBook.bookName} Already Exist In Read List!`);
@@ -47,16 +63,16 @@ const ContextProvider = ({ children }) => {
       setAddToWishList([...addToWishList, findBook]);
       toast.success(`${findBook.bookName} added In WishList!`);
     }
-    
-  }
+  };
 
   const data = {
+    showBookData,
     addToRead,
     setAddToRead,
     handleAddToRead,
     handleAddToWishList,
     addToWishList,
-    setAddToWishList
+    setAddToWishList,
   };
 
   return <bookContext.Provider value={data}>{children}</bookContext.Provider>;

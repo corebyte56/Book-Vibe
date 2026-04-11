@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import { Link } from 'react-router';
 
 const WishList = ({wishBook}) => {
   return (
@@ -71,6 +72,7 @@ const WishList = ({wishBook}) => {
                   Rating: {wishBook.rating}
                 </span>
 
+                <Link to={`/bookDetails/${wishBook.bookId}`} >
                 <motion.button
                   whileHover={{
                     translateY: -4,
@@ -83,6 +85,7 @@ const WishList = ({wishBook}) => {
                 >
                   View Details
                 </motion.button>
+                </Link>
               </div>
             </div>
           </div>

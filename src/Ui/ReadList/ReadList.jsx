@@ -1,11 +1,16 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import { Link } from 'react-router';
+
+
 
 const ReadList = ({readBook}) => {
+  
   return (
     <div className="container mx-auto my-7 bg-[#1f2937] rounded-3xl border border-gray-700 shadow-lg p-6 md:p-8">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Book Image */}
+            
             <div className="w-full md:w-52 flex justify-center">
               <img
                 src={readBook.image}
@@ -71,6 +76,7 @@ const ReadList = ({readBook}) => {
                   Rating: {readBook.rating}
                 </span>
 
+                <Link to={`/bookDetails/${readBook.bookId}`} >
                 <motion.button
                   whileHover={{
                     translateY: -4,
@@ -83,6 +89,7 @@ const ReadList = ({readBook}) => {
                 >
                   View Details
                 </motion.button>
+                </Link>
               </div>
             </div>
           </div>
