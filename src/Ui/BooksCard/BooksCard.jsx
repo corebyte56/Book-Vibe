@@ -1,9 +1,10 @@
 import React from "react";
 import { motion, hover } from "framer-motion";
-const BooksCard = ({ showBookData }) => {
+import { Link } from "react-router";
+const BooksCard = ({ book }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-      {showBookData.map((book) => (
+    <Link to={`/bookDetails/${book.bookId}`}  >
+      
         <motion.div
           whileHover={{
             y: -10,
@@ -60,8 +61,8 @@ const BooksCard = ({ showBookData }) => {
             </div>
           </div>
         </motion.div>
-      ))}
-    </div>
+      
+    </Link>
   );
 };
 
