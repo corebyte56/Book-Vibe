@@ -5,24 +5,43 @@ import { toast } from "react-toastify";
 export const bookContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [addToRead, setAddToRead] = useState([]);
 
-  const handleAddtoRead = (findBook) => {
+  const [addToRead, setAddToRead] = useState([]);
+  const [addToWishList, setAddToWishList] = useState([]);
+
+  const handleAddToRead = (findBook) => {
     const isExist = addToRead.find((book) => book.bookId == findBook.bookId);
 
     if (isExist) {
-      toast.error("Book Already Exist!");
+      toast.error(`${findBook.bookName} Already Exist In Read List!`);
+      
     } else {
       setAddToRead([...addToRead, findBook]);
-      toast.success("Book added!");
+      toast.success(`${findBook.bookName} added In Read List!`);
+      
     }
-    console.log(addToRead);
+    
   };
 
+  const handleAddToWishList = (findBook) => {
+    const isExist = addToWishList.find((book) => book.bookId == findBook.bookId);
+
+    if (isExist) {
+      toast.error(`${findBook.bookName} Already Exist In Read List!`);
+    } else {
+      setAddToWishList([...addToWishList, findBook]);
+      toast.success(`${findBook.bookName} added In WishList!`);
+    }
+    
+  }
+
   const data = {
-    handleAddtoRead,
     addToRead,
     setAddToRead,
+    handleAddToRead,
+    handleAddToWishList,
+    addToWishList,
+    setAddToWishList
   };
 
   return <bookContext.Provider value={data}>{children}</bookContext.Provider>;
