@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useLoaderData, useParams } from 'react-router'
 import {motion} from 'framer-motion'
+import { bookContext } from '../../Context/context'
 const BookDetails = () => {
     const {bookId} = useParams()
     
     const books = useLoaderData()
-
+    const sdookContext = useContext(bookContext)
     const findBook = books.find(book => book.bookId == bookId)
 
+    console.log(sdookContext);
+    
    // console.log(bookId, books, findBook);
     const {
         bookName,

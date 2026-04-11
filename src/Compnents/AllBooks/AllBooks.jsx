@@ -10,7 +10,7 @@ const AllBooks = () => {
       const response = await fetch("/booksData.json");
       const data = await response.json();
       setShowBookData(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
