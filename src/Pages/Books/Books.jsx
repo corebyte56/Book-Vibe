@@ -11,7 +11,7 @@ const Books = () => {
 
   return (
     // Read List
-    <div className="container mx-auto px-20">
+    <div className="container mx-auto px-3 my-15">
       <Tabs>
         <TabList>
           <Tab>Read List</Tab>
