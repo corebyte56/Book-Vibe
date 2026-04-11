@@ -10,6 +10,8 @@ const AllBooks = () => {
       const response = await fetch("/booksData.json");
       const data = await response.json();
       setShowBookData(data);
+      console.log(data);
+      
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -20,11 +22,11 @@ const AllBooks = () => {
   }, []);
 
   return (
-    <div className="md:py-20 py-10">
+    <div className="md:py-20 py-10 md:px-30">
       <h1 className="text-5xl font-bold">Books</h1>
       {/* cards */}
 
-      <div className="py-8 flex">
+      <div className="py-8">
         <BooksCard showBookData={showBookData} />
       </div>
     </div>
