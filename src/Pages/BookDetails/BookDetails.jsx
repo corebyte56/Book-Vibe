@@ -22,6 +22,7 @@ const BookDetails = () => {
     categorytags,
     publisher,
     tags,
+    review,
     yearOfPublishing,
   } = findBook;
 
@@ -48,7 +49,11 @@ const BookDetails = () => {
               By : <span className="font-medium text-gray-200">{author}</span>
             </p>
           </div>
-
+        <div>
+            <p className="text-[14px] text-gray-500 ">
+  {review}
+</p>
+        </div>
           {/* Category + Tags */}
           <div className="space-y-4 border-b border-gray-800 pb-5">
             <p className="text-lg font-medium text-gray-200">{categorytags}</p>
