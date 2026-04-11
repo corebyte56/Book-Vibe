@@ -1,5 +1,5 @@
 import HomePage from "../Pages/HomePage/HomePage.jsx";
-import MainLayout from "../Layout/mainlayout.jsx";
+import MainLayout from "../Layout/mainLayout.jsx";
 import Books from "../Pages/Books/Books.jsx";
 import PagesToRead from "../Pages/Pages to Read/PagesToRead.jsx";
 import { createBrowserRouter } from "react-router";
